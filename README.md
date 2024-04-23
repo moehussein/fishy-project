@@ -1,8 +1,9 @@
 # Fishbowl Evolution
 
 Simulating the development of fish intelligence within a controlled environment using neuroevolution and genetic algorithms.
-Operational Mechanism
-The Fish
+
+# Operational Mechanism
+## The Fish
 
 Fish are housed in an aquarium equipped with a randomly initialized neural network as their cognitive center. Their growth hinges on consuming encountered food items.
 
