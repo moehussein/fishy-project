@@ -1,57 +1,54 @@
-# Fishbowl Evolution
+# fishbowl
+Simulating evolution of fish intelligence in a fishbowl using neuroevolution / genetic algorithms.
 
-Simulating the development of fish intelligence within a controlled environment using neuroevolution and genetic algorithms.
+# How it works
 
-# Operational Mechanism
-## The Fish
+## The fish
+The fish are placed in an aquarium with a randomly initiated neural network serving as their brain. The fish grow by consuming the food they bump into. 
 
-Fish are housed in an aquarium equipped with a randomly initialized neural network as their cognitive center. Their growth hinges on consuming encountered food items.
+The fish can:
+- pulse (increase their speed like a jellyfish would do) - *done automatically*, 
+- split (when they are big enough to produce an offspring) - *done automatically* or
+- turn left/right. 
 
-## Fish actions include:
+However, every cycle the fish expend their energy (and lose their weight) on thinking, breathing etc. - and even more so when they move. When the fish is too small, it dies, turning into food.
 
-    Pulsing (increasing speed akin to a jellyfish) - automatic,
-    Splitting (when mature enough to reproduce) - automatic, or
-    Turning left/right.
+## The food
 
-Yet, each cycle drains their energy (and mass) due to cognitive processes, respiration, etc., amplified during movement. If a fish is too small, it perishes, becoming sustenance.
-The Food
+The fishbowl also contains food (plankton), which grows on its own and splits into two pieces when it's big enough.
 
-The fishbowl also harbors food (plankton), which proliferates independently and divides when reaching a certain size.
+## The simulation
 
-The Simulation:
+The program will run the simulation until all the fish but one die. At this point the simulation resets and another generation of fish is put in to the fishbowl, derived from the most successful fish from the previous generation.
 
-The program executes the simulation until all but one fish perish. Then, it resets, introducing a new generation derived from the most successful fish of the prior one.
+You can witness the changes in the fish behaivor as the neural network evolves. The evolution is also shaped by the initial food amount and the duration of the simulation of each generation.
 
-Observe the behavioral shifts in fish as their neural networks evolve. Initial food abundance and simulation duration per generation also mold the evolution.
-Key Features
+# Features
 
-    Genome retention in browser cache for resuming evolution upon reloading.
-    Display of statistics (neural network response distribution, network complexity, and generation durations).
-    Customization options include simulation speed, maximum generation duration, and initial food quantity.
-    Vision training mode facilitates accelerated improvement in fish vision/steering coordination.
-    Load pretrained network feature offers a brain adept at steering fish toward nearby food.
+- Genome is stored in the browser cache to allow for restoring the evolution from where it stopped when the browser was reloaded.
+- Statistics (distribution of neural network responses, complexity of the neural network and generation durations) are displayed.
+- You can adjust the simulation speed, maximum generation duration and initial amount of food.
+- Vision training mode - simplified environment conditions to speed up vision / steering coordination of the fish
+- Load pretrained network - a brain that already learned to steer the fish towards the closest food piece
 
-# Fish Brain Mechanics
+# How the fish brain works
 
-Fish brains employ LiquidCarrot, a JavaScript implementation of the NEAT algorithm, for rapid neuroevolution and autonomous neural network development.
+The fish brain uses LiquidCarrot package which is a Javascript implementation of the NEAT algorithm for fast neuroevolution and self-developing neural network topology.
 
-    LiquidCarrot: [GitHub Repository](https://github.com/liquidcarrot/carrot)
-    NEAT: [Exploration Article](https://www.oreilly.com/radar/neuroevolution-a-different-kind-of-deep-learning/)
+- LiquidCarrot: https://github.com/liquidcarrot/carrot
+- NEAT: https://www.oreilly.com/radar/neuroevolution-a-different-kind-of-deep-learning/
 
-## Inputs to the Fish Brain
+## Inputs of the fish brain
+- 1st node: speed of the fish
+- 2nd node: smell - density of food in the vicinity of the fish
+- 3rd node: distance to the closest food piece in the fish's vision cone
+- 4th node: anle to that food piece
 
-    1st node: Fish speed
-    2nd node: Smell - food density in fish vicinity
-    3rd node: Distance to nearest food item within fish's visual range
-    4th node: Angle to said food item
+## Outputs of the fish brain
+One node containing the rotation angle of the fish.
 
-## Outputs from the Fish Brain
-
-Single node indicating fish rotation angle.
-
-# Observed Evolutionary Patterns
-
-    Abundant food prompts fish to maneuver in distorted circular patterns, striving to gather available food, with increased splitting.
-    Scarcity of food rationalizes straightforward movement, rebounding off walls, and cessation of reproduction.
-    In extreme food scarcity, stationary existence proves optimal; non-moving fish conserve energy and outlive those expending energy in futile motion.
-    Notably, strategies effective in shorter generation durations may falter when durations are extended, and vice versa.
+# Observed evolutionary phenomena
+- When the food is enough, the fish start moving in distorted circular patterns, trying to collect all the food around them. Food abundance also promts more splitting.
+- When there is less food, it is more rational for the fish to just go straight, bouncing off the walls. They also stop reproducing.
+- When the food is very scarce, the best strategy for the fish turns out to be just staying at one place and peacefully die. Since moving leads to energy/weight expenditure and given the scarcity of food, does not lead to weight increase, those fish that don't move become the fittest and survive all the moving ones.
+- It's also interesting to see how a strategy that has evolved in shorter generation durations becomes ineffective once the duration is increased, or vice versa.
