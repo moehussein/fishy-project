@@ -16,7 +16,8 @@ Yet, each cycle drains their energy (and mass) due to cognitive processes, respi
 The Food
 
 The fishbowl also harbors food (plankton), which proliferates independently and divides when reaching a certain size.
-The Simulation
+
+The Simulation:
 
 The program executes the simulation until all but one fish perish. Then, it resets, introducing a new generation derived from the most successful fish of the prior one.
 
