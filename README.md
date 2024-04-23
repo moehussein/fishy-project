@@ -1,4 +1,4 @@
-# fishbowl
+# smells.... fishy
 Simulating evolution of fish intelligence in a fishbowl using neuroevolution / genetic algorithms.
 
 # How it works
