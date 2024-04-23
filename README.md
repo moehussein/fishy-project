@@ -34,8 +34,8 @@ Key Features
 
 Fish brains employ LiquidCarrot, a JavaScript implementation of the NEAT algorithm, for rapid neuroevolution and autonomous neural network development.
 
-    LiquidCarrot: GitHub
-    NEAT: O'Reilly
+    LiquidCarrot: [GitHub Repository](https://github.com/liquidcarrot/carrot)
+    NEAT: [Exploration Article](https://www.oreilly.com/radar/neuroevolution-a-different-kind-of-deep-learning/)
 
 ## Inputs to the Fish Brain
 
